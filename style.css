@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+section{
+    display: flex;
+    width: 900px;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px 10px rgba(2, 2, 118, 0.7); /* Brillo azul alrededor del contenedor */
+    border-radius: 5px; /* Bordes redondeados para el contenedor */
+  }
+  section img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .1;
+    transition: .5s ease;
+  }
+  section img:hover{
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+    transform: scale(1.1); /* Agranda la imagen ligeramente */
+    animation: wave 0.5s ease; /* Aplica la animación de ola */
+    z-index: 1; /* Asegura que la imagen se superponga sobre otras */
+  }
+  section img:hover ~ img {
+    opacity: 0;
+}
+  @keyframes wave {
+    0% {
+        transform: scale(1.1) translateY(-5px) rotate(-2deg);
+    }
+    50% {
+        transform: scale(1.1) translateY(5px) rotate(2deg);
+    }
+    100% {
+        transform: scale(1.1) translateY(0) rotate(0deg);
+    }
+}
